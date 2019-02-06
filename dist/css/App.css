@@ -1,0 +1,936 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Muli', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#container {
+  position: relative;
+  min-height: 100%;
+}
+
+a:focus, button:focus, input:focus, textarea:focus {
+  outline: none;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s all;
+}
+
+a:hover {
+  color: chocolate;
+}
+
+button {
+  background-color: chocolate;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+button:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.height {
+  height: 50px;
+}
+
+#loader {
+  background-color: rgba(0, 0, 0, .6);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  padding-top: 200px;
+  z-index: 10000;
+}
+
+#loginPage {
+  background-image: url(../images/3.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  background-color: rgba(0, 0, 0, .8);
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  padding: 10px;
+  z-index: 1000;
+}
+
+#home-header {
+  transition: 0.3s all;
+}
+
+header.hbg {
+  background-color: chocolate;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+header.hbg a:hover {
+  color: #fff;
+}
+
+header .logo {
+  color: #fff;
+  margin-left: 40px;
+}
+
+nav {
+  float: right;
+  margin-top: -25px;
+}
+
+nav ul.s-hide li {
+  display: inline;
+  padding-right: 40px;
+}
+
+.s-hide i.ti-shopping-cart, .ti-user {
+  font-size: 20px;
+  transition: 0.3s all;
+}
+
+.shoppingcart-a {
+  transition: 0.3s all;
+  font-size: 8px;
+}
+
+nav ul.l-hide {
+  display: none;
+}
+
+.badge {
+  background-color: chocolate;
+  color: #fff;
+  height: 10px;
+  width: 10px;
+  border-radius: 5px;
+  padding: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-weight: bold;
+  opacity: .9;
+}
+
+header.hbg .badge {
+  background-color: #fff;
+  color: chocolate;
+}
+
+
+.hide {
+  display: none !important;
+}
+
+#home {
+  width: 100%;
+  height: 400px;
+  background-image: url(../images/1.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  background-color: rgba(0, 0, 0, .6);
+}
+
+#home .title {
+  text-align: center;
+  color: #fff;
+  padding-top: 150px;
+}
+
+#home .title h1 {
+  font-size: 50px;
+  font-family: 'Playfair Display', sans-serif;
+}
+
+#home .title button {
+  margin-top: 10px;
+}
+
+.div {
+  border: 2px solid chocolate;
+  width: 60px;
+  margin-top: 5px;
+}
+
+.cart-div {
+  position: absolute;
+  background-color: #fff;
+  margin-top: 20px;
+  right: 200px;
+  width: 200px;
+  padding: 15px;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.cart-details li a {
+  font-size: 16px;
+  color: chocolate;
+}
+
+.cart-details li a:hover {
+  font-size: 16px;
+  color: rgb(160, 69, 4);
+}
+
+.cart-details li {
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 0;
+  border-bottom: 1px dotted #aaa;
+  margin-bottom: 5px;
+}
+
+.cart-details img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  float: left;
+  padding-right: 20px;
+}
+
+.cart-title {
+  font-weight: bold;
+}
+
+#foods {
+  padding: 50px;
+}
+
+#allmenu, #allmenuEdit, #allorders {
+  margin-top: 40px;
+  color: #aaa;
+}
+
+#foods .item {
+  width: 18%;
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 30px;
+  margin-right: 2%;
+  float: left;
+}
+
+#foods .item img {
+  width: 100%;
+  height: 150px;
+  cursor: pointer;
+  filter: grayscale(50%);
+  transition: 0.3s all;
+}
+
+.foods {
+  padding: 0 !important;
+}
+
+.foods .item {
+  width: 23% !important;
+}
+
+#foods .item img:hover {
+  filter: unset;
+  transform: scale(1.1,1.1);
+}
+
+#foods .item .item-text {
+  text-align: center;
+  padding: 10px 20px;
+  margin-bottom: 4px;
+}
+
+#foods .item .item-text a {
+  color: #000;
+}
+
+.item .price-tag {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.quantityField {
+  width: 45px;
+  border: 1px solid #aaa;
+  border-radius: 2px;
+  padding: 5px;
+}
+
+.clear {
+  clear: both;
+}
+
+/** Jumbotron */
+
+#jumbotron {
+  background-image: url(../images/3.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 50px;
+}
+
+#jumbotron h1 {
+  font-size: 40px;
+  color: #fff;
+}
+
+/** Order */
+
+#order {
+  width: 100%;
+  height: 250px;
+  background-image: url(../images/1.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  background-color: rgba(0, 0, 0, .6);
+}
+
+#order .title {
+  text-align: center;
+  color: #fff;
+  padding-top: 100px;
+}
+
+#order .title h1 {
+  font-size: 50px;
+  font-family: 'Playfair Display', sans-serif;
+}
+
+#order .title p {
+  font-size: 20px;
+}
+
+#order .title button {
+  margin-top: 10px;
+}
+
+#menudetails {
+  width: 100%;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  background-color: rgba(0, 0, 0, .6);
+}
+
+#menudetails .title {
+  text-align: center;
+  color: #fff;
+  padding-top: 130px;
+}
+
+#menudetails .title h1 {
+  font-size: 50px;
+  font-family: 'Playfair Display', sans-serif;
+}
+
+#menudetails .title p {
+  font-size: 20px;
+}
+
+#menudetails .title button {
+  margin-top: 10px;
+}
+
+#placeorder {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  padding: 50px;
+}
+
+#placeorder input {
+  color: #aaa !important;
+}
+
+#placeorder textarea {
+  background-color: transparent;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  padding-right: 0;
+  margin-bottom: 20px;
+  border: 1px solid chocolate;
+  color: #aaa;
+  transition: 0.3s all;
+  resize: none;
+}
+
+.placeorder {
+  width: 500px;
+}
+
+.placeorder h2 {
+  margin-bottom: 10px;
+  color: #aaa;
+}
+
+#checkout {
+  padding: 50px;
+}
+
+/** Profile **/
+
+#profile {
+  width: 100%;
+  height: 300px;
+  background-image: url(../images/5.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-blend-mode: multiply;
+  background-color: rgba(0, 0, 0, .75);
+}
+
+.profile-details {
+  position: absolute;
+  top: 130px;
+  left: 80px;
+  color: #fff;
+}
+
+.profile {
+  position: absolute;
+  top: 230px;
+  left: 80px;
+  z-index: 10;
+}
+
+.profileImage {
+  background-image: url(../images/no.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#profile-bar {
+  background-color: chocolate;
+  padding: 10px;
+}
+
+#profile-section {
+  margin-top: 20px;
+}
+
+.profileOrders {
+  padding:30px 30px 30px 50px;
+}
+
+#profile-section h3 {
+  width: fit-content;
+  font-size: 20px;
+  padding-bottom: 5px;
+  border-bottom:3px solid chocolate;
+}
+
+.profileButtons {
+  margin-top: 150px;
+  position: absolute;
+  right: 10px;
+}
+
+#aside {
+  background-color: #eee;
+  position: fixed;
+  width: 15%;
+  height: 100%;
+  padding-top: 100px;
+  padding-left: 20px;
+}
+
+#aside ul li {
+  background-color: #aaa;
+  padding: 20px;
+  margin-bottom: 1px;
+  list-style: none;
+}
+
+#aside ul li a {
+  color: #fff;
+}
+
+#admin-section {
+  margin-left: 20%;
+  padding: 30px;
+  padding-left: 0;
+  padding-top: 100px;
+}
+
+#admin-section .title {
+  color: #aaa;
+  padding-bottom: 5px;
+}
+
+#ordernow {
+  font-size: 20px;
+}
+
+.order-table{
+  margin: 20px;
+  margin-left: 0;
+}
+
+#recentorders {
+  padding: 50px;
+}
+
+#myorders {
+  padding: 50px;
+}
+
+table {
+  width: 100%;
+}
+
+.table {
+  overflow: auto;
+}
+
+table thead {
+  background-color: chocolate;
+  color: #fff;
+}
+
+table thead th {
+  padding: 15px;
+}
+
+table tbody {
+  text-align: center;
+}
+
+table tbody tr td {
+  background-color: #fff;
+  padding: 15px;
+  color: #333;
+}
+
+table li {
+  list-style: none;
+}
+
+.tabletotal td {
+  background-color: #333;
+  color: #fff;
+}
+
+/** Login **/
+#login {
+  padding-top: 100px;
+}
+
+.login {
+  width: 400px;
+  color: #fff;
+}
+
+.login h4 {
+  margin-bottom: 20px;
+}
+
+#login input, #placeorder input {
+  background-color: transparent;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  padding-right: 0;
+  margin-bottom: 20px;
+  border: 1px solid chocolate;
+  color: #fff;
+  transition: 0.3s all;
+}
+
+#login input:focus, #placeorder input:focus {
+  border: 1px solid transparent;
+  border-left: 1px solid chocolate;
+}
+
+#login button, #placeorder button {
+  width: 30%;
+}
+
+#login button:hover, #placeorder button:hover {
+  width: 60%;
+}
+
+/** Colors **/
+
+.green {
+  background-color: rgb(5, 146, 64) !important;
+}
+
+.red {
+  background-color: rgb(187, 48, 24) !important;
+}
+
+.blue {
+  background-color: rgb(0, 110, 255) !important;
+}
+
+.yellow {
+  background-color: rgb(189, 189, 5) !important;
+}
+
+.white-text {
+  color: #fff;
+}
+
+.red-text {
+  color: rgb(187, 48, 24) !important;
+}
+
+.default-text {
+  color: chocolate;
+}
+
+.h-questions {
+  padding: 10px;
+  line-height: 30px;
+  border-bottom: 1px dotted #aaa;
+  margin-bottom: 10px;
+}
+
+.h-questions a {
+  color: #aaa;
+}
+
+.tags ul li {
+  display: inline;
+  padding-right: 10px;
+}
+
+.tags ul li a {
+  background-color: #aaa;
+  color: #fff;
+  font-size: 12px;
+  padding: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.review ul li {
+  display: inline;
+  padding-right: 10px;
+}
+
+.review ul li span.text {
+  color: #aaa;
+  font-size: 13px;
+}
+
+.review ul li span.count {
+  background-color: rgb(0, 140, 255);
+  color: #fff;
+  padding: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.error {
+  position: fixed;
+  width: auto;
+  padding: 10px;
+  right: 10px;
+  top: 130px;
+  color: #fff;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 10000;
+}
+
+/** Footer */
+
+footer {
+  /* position: absolute; */
+  bottom: 0;
+  width: 100%;
+  background-color: chocolate;
+  padding: 10px;
+  padding-left: 0;
+  padding-right: 0;
+  margin-bottom: -50px;
+  text-align: center;
+  height: 50px;
+}
+
+footer a:hover {
+  color: #eee;
+}
+
+/** Modal **/
+
+.modal {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .8);
+  top: 0;
+  z-index: 1000;
+  padding-top: 100px;
+  display: none;
+  transition: 0.5s all;
+}
+
+.modal-content {
+  background-color: #ddd;
+  width: 400px;
+  padding: 20px;
+  border-radius: 3px;
+}
+
+.modal-content h2 {
+  margin-bottom: 10px;
+}
+
+.modal-content input, .modal-content textarea {
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+  border-radius: 3px;
+  border: none;
+  background-color: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  font-size: 18px;
+  resize: none;
+}
+
+.modal-show {
+  display: inherit;
+}
+
+/** Responsive **/
+
+@media (max-width: 1072px) {
+  nav > ul.s-hide > li {
+    padding-right: 20px;
+  }
+
+  #foods .item {
+    width: 30%;
+  }
+}
+
+@media (max-width: 1024px) {
+  nav > ul.s-hide > li {
+    padding-right: 30px;
+  }
+
+  #foods .item {
+    width: 30%;
+  }
+}
+
+@media (max-width: 600px) {
+  nav > ul.s-hide > li {
+    padding-right: 20px;
+  }
+
+  .profile-details {
+    top: 70px;
+    left: 10px;
+    line-height: 15px;
+    font-size: 12px;
+  }
+
+  #foods {
+    padding: 20px;
+  }
+
+  #foods .item {
+    width: 30%;
+  }
+
+  #foods .item img {
+    height: unset;
+  }
+
+  .error {
+    width: 100%;
+    top: unset;
+    right: 0;
+    bottom: 5px;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+  }
+}
+
+@media (max-width: 500px) {
+  header, header.hbg {
+    background-color: chocolate;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 10px;
+  }
+
+  header a:hover, header.hbg a:hover {
+    color: #fff;
+  }
+
+  header .logo, header.hbg .logo {
+    color: #fff;
+    margin-left: 10px;
+  }
+
+  .logo h1 {
+    font-size: 18px;
+  }
+
+  nav > ul.s-hide {
+    display: none;
+  }
+
+  nav > ul.l-hide {
+    display: inherit;
+  }
+
+  nav > ul.l-hide > li {
+    display: inline;
+    padding-right: 30px;
+  }
+
+  .dropdown {
+    background-color: #fff;
+    position: absolute;
+    width: 100%;
+    top: 50px;
+    left: 0;
+    padding: 10px;
+  }
+
+  .dropdown ul li {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .dropdown ul li:first-child {
+    padding-bottom: 5px;
+  }
+
+  .dropdown ul li a {
+    color: chocolate;
+    font-size: 18px;
+  }
+
+  .cart-div {
+    right: 50px;
+    width: 200px;
+  }
+
+  #home {
+    height: 250px;
+  }
+
+  #home .title, #order .title {
+    padding-top: 100px;
+  }
+
+  #home .title h1, #order .title h1 {
+    font-size: 35px;
+  }
+
+  #foods .item {
+    width: 100%;
+    margin-top: 30px;
+    float: none;
+  }
+
+  #loginPage {
+    background-image: none;
+  }
+
+  .login {
+    width: 100%;
+  }
+
+  #login input, #placeorder input, #placeorder textarea {
+    width: 80%;
+  }
+
+  #placeorder {
+    padding: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .placeorder {
+    width: 100%;
+  }
+
+  #profile {
+    height: 200px;
+    background-attachment: unset;
+  }
+
+  .profile {
+    top: 130px;
+    left: 10px;
+  }
+
+  .profileOrders {
+    float: none;
+    margin-left: 0;
+    width: auto;
+    padding: 5px;
+  }
+
+  #aside {
+    display: none;
+  }
+
+  #admin-section {
+    margin-left: 5%;
+  }
+
+  .foods .item {
+    width: 100% !important;
+  }
+
+  .modal-content {
+    width: 300px;
+  }
+}
+
+@media (max-width: 350px) {
+  .logo {
+    font-size: 13px;
+  }
+
+  .login h4 {
+    font-size: 12px;
+  }
+
+  nav > ul.l-hide > li {
+    padding-right: 20px;
+  }
+
+  .modal-content {
+    width: 250px;
+  }
+}
