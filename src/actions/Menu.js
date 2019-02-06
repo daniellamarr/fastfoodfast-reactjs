@@ -1,12 +1,15 @@
 import Helpers from "./Helpers";
+import { FETCH_MENU } from './types';
 
-export default class Menu extends Helpers {
-  static async getAllMenu(){
-    try {
-      const menu = await this.axiosGet('/menu');
-      return menu;
-    } catch (error) {
-      console.log(error)
-    }
+export const getAllMenu = () => async dispatch => {
+  try {
+    const [ payload ] = await Promise.all([Helpers.axiosGet('/menu')]);
+    const { menu } = payload.data;
+    dispatch({
+      type: FETCH_MENU,
+      payload: menu,
+    });
+  } catch (error) {
+    console.log(error)
   }
 }

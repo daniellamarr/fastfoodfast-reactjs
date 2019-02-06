@@ -1,8 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router } from "react-router-dom";
+import { Provider } from 'react-redux';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Container from './routes';
+import store from './store';
 
 export default class App extends React.Component {
   constructor() {
@@ -13,11 +15,13 @@ export default class App extends React.Component {
   render() {
     return (
       <Router>
-        <div>
-          <Header />
-          <Container />
-          <Footer />
-        </div>
+        <Provider store={store}>
+          <div>
+            <Header />
+            <Container />
+            <Footer />
+          </div>
+        </Provider>
       </Router>
     )
   }
