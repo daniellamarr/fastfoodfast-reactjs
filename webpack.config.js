@@ -23,7 +23,8 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
-    contentBase: './dist',
-    hot: true
+    contentBase: './public',
+    hot: true,
+    historyApiFallback: true,
   }
 };
