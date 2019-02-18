@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 export default class Header extends React.Component {
   constructor() {
@@ -25,7 +26,7 @@ export default class Header extends React.Component {
                 <a href="javascript:;" className="logout"><i className="ti-power-off"></i></a>
               </li>
               <li className="user-login"><a href="login.html">Login</a></li>
-              <li className="user-login"><a href="signup.html">Sign Up</a></li>
+              <li className="user-login"><Link to="/signup">Sign Up</Link></li>
             </ul>
             <div id="shoppingcart" className="cart-div hide">
               <p>You have <span className="itemsincart">0</span> item(s)</p>
