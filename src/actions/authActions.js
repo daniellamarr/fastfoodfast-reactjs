@@ -1,6 +1,6 @@
 import 'babel-polyfill';
 import Helpers from "./Helpers";
-import { SIGNUP, SET_REQUEST, SET_USER_ERROR, LOGIN, SET_CURRENT_USER, } from './types';
+import { SIGNUP, SET_REQUEST, SET_USER_ERROR, SET_CURRENT_USER, } from './types';
 
 export const setSignup = response => ({
   type: SIGNUP,
@@ -14,11 +14,6 @@ export const setUserRequest = () => ({
 export const setUserError = error => ({
   type: SET_USER_ERROR,
   payload: error,
-});
-
-export const setLogin = response => ({
-  type: LOGIN,
-  payload: response,
 });
 
 export const setCurrentUser = user => ({
@@ -55,8 +50,7 @@ export const userLogin = (body) => async (dispatch) => {
       '/auth/login',
       body
     );
-    
-    dispatch(setLogin(res.data));
+
     Helpers.statusHandler(
       res.data.message,
       res.status
