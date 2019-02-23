@@ -1,6 +1,11 @@
 import 'babel-polyfill';
-import Helpers from "./Helpers";
-import { SIGNUP, SET_REQUEST, SET_USER_ERROR, SET_CURRENT_USER, } from './types';
+import Helpers from './Helpers';
+import {
+  SIGNUP,
+  SET_REQUEST,
+  SET_USER_ERROR,
+  SET_CURRENT_USER,
+} from './types';
 
 export const setSignup = response => ({
   type: SIGNUP,
@@ -21,54 +26,54 @@ export const setCurrentUser = user => ({
   payload: user,
 });
 
-export const userSignup = (body) => async (dispatch) => {
+export const userSignup = body => async (dispatch) => {
   dispatch(setUserRequest());
   try {
     const res = await Helpers.axiosPost(
       '/auth/signup',
-      body
+      body,
     );
-    
+
     dispatch(setSignup(res.data));
     Helpers.statusHandler(
       res.data.message,
-      res.status
+      res.status,
     );
-    setTimeout(() => location.reload(true), 1000);
-  } catch(err) {
+    setTimeout(() => window.location.reload(true), 1000);
+  } catch (err) {
     const errorMessage = err.response.data.message;
     const statusCode = err.response.status;
     Helpers.statusHandler(errorMessage, statusCode);
     dispatch(setUserError(errorMessage));
   }
-}
+};
 
-export const userLogin = (body) => async (dispatch) => {
+export const userLogin = body => async (dispatch) => {
   dispatch(setUserRequest());
   try {
     const res = await Helpers.axiosPost(
       '/auth/login',
-      body
+      body,
     );
 
     Helpers.statusHandler(
       res.data.message,
-      res.status
+      res.status,
     );
     const user = {
       token: res.data.token,
-      user: res.data.user
-    }
+      user: res.data.user,
+    };
     dispatch(setCurrentUser(user));
-    localStorage.setItem('userDetails',JSON.stringify(user));
-    setTimeout(() => location.href='/', 1000);
-  } catch(err) {
+    localStorage.setItem('userDetails', JSON.stringify(user));
+    window.location.href = '/';
+  } catch (err) {
     const errorMessage = err.response.data.message;
     const statusCode = err.response.status;
     Helpers.statusHandler(errorMessage, statusCode);
     dispatch(setUserError(errorMessage));
   }
-}
+};
 
 export const userData = () => async (dispatch) => {
   if (localStorage.getItem('userDetails') !== null) {
@@ -77,4 +82,4 @@ export const userData = () => async (dispatch) => {
   } else {
     return false;
   }
-}
+};

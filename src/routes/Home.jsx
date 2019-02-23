@@ -1,12 +1,13 @@
 import React from 'react';
-import GetMenu from '../components/GetMenu';
+import GetMenu from '../components/GetMenu.jsx';
 
+/**
+ * Home
+ */
 export default class Home extends React.Component {
-  constructor() {
-    super();
-    this.state = {}
-  }
-
+  /**
+   * @returns {JSX} jsx
+   */
   render() {
     return (
       <div>
@@ -29,6 +30,6 @@ export default class Home extends React.Component {
           <h1>Get it here!</h1>
         </section>
       </div>
-    )
+    );
   }
 }
