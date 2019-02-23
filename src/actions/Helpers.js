@@ -39,4 +39,31 @@ export default class Helpers {
       }
     }
   }
+
+  static declareUser (className,str) {
+    const cl = document.getElementsByClassName(className);
+    for (let i = 0; i < cl.length; i++) {
+      cl[i].innerHTML = str;
+    }
+  }
+  
+  static initUser () {
+    if (localStorage.getItem('token')!=null) {
+      const tags = document.getElementsByClassName('user-login');
+      for (let i = 0; i < tags.length; i++) {
+          tags[i].classList.add('hide');
+      }
+      const user = JSON.parse(localStorage.getItem('token'));
+      const fullname = user.user.name;
+      this.declareUser('fullname',fullname);
+      this.declareUser('email',user.user.email);
+      this.declareUser('phone',user.user.phone);
+      this.declareUser('address',user.user.address);
+    }else{
+      const tags = document.getElementsByClassName('user-logout');
+      for (let i = 0; i < tags.length; i++) {
+          tags[i].classList.add('hide');
+      }
+    }
+  }
 }

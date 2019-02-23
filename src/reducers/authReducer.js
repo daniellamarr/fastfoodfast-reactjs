@@ -1,4 +1,4 @@
-import { SIGNUP, SET_REQUEST, SET_USER_ERROR, } from '../actions/types';
+import { SIGNUP, SET_REQUEST, SET_USER_ERROR, SET_CURRENT_USER, } from '../actions/types';
 
 const initialState = {
   response: {},
@@ -21,6 +21,11 @@ export default function(state = initialState, action) {
         ...state,
         response: action.payload,
       };
+    case SET_CURRENT_USER:
+      return {
+        ...state,
+        user: action.payload
+      }
     default:
       return state;
   }
