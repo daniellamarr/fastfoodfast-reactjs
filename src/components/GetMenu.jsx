@@ -1,12 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { getAllMenu } from '../actions/Menu';
 
+/**
+ * GetMenu
+ */
 class GetMenu extends React.Component {
-  componentWillMount() {
+  /**
+   * Initialized functions for component
+   * @returns {null} null
+   */
+  componentDidMount() {
     this.props.getAllMenu();
   }
 
+  /**
+   * @returns {JSX} jsx
+   */
   render() {
     const menuItems = this.props.menuItems.map(menuItem => (
       <div key={menuItem.id} className="item">
@@ -17,7 +28,13 @@ class GetMenu extends React.Component {
             <h5 className="price">N{menuItem.price}</h5>
           </a>
           <div className="price-tag">
-            <input type="number" id={`qty${menuItem.id}`} className="quantityField" defaultValue="1" /><br /><br />
+            <input
+              type="number"
+              id={`qty${menuItem.id}`}
+              className="quantityField"
+              defaultValue="1"
+            />
+            <br /><br />
             <button className="addtocart">
               Add to cart
             </button>
@@ -27,20 +44,30 @@ class GetMenu extends React.Component {
     ));
     return (
       <div>
-        {this.props.menuStatus ?
-          menuItems :
-          <center>
+        {this.props.menuStatus
+          ? menuItems
+          : <center>
             <img src="images/loader.gif" alt="loading..." width="100px" />
           </center>
         }
       </div>
-    )
+    );
   }
 }
 
+GetMenu.propTypes = {
+  getAllMenu: PropTypes.func.isRequired,
+  menuItems: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    price: PropTypes.string.isRequired,
+  })),
+  menuStatus: PropTypes.bool.isRequired,
+};
+
 const mapStateToProps = state => ({
   menuItems: state.menus.menus,
-  menuStatus: state.menus.menuStatus
-})
+  menuStatus: state.menus.menuStatus,
+});
 
 export default connect(mapStateToProps, { getAllMenu })(GetMenu);

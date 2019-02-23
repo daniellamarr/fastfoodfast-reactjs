@@ -1,21 +1,28 @@
+/* eslint-disable no-script-url */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { userData } from '../actions/authActions';
 import { onToggle, shoppingCart } from '../utils/utilityScript';
 
+/**
+ * Header
+ */
 export class Header extends React.Component {
-  constructor() {
-    super();
-    this.state = {}
-  }
-
+  /**
+   * Initialized functions for component
+   * @returns {null} null
+   */
   componentDidMount() {
     this.props.userData();
     onToggle('toggle', 'dropdown');
     shoppingCart();
   }
 
+  /**
+   * @returns {JSX} jsx
+   */
   render() {
     const userDetails = this.props.auth.user;
     return (
@@ -26,8 +33,8 @@ export class Header extends React.Component {
           </div>
           <nav>
             {
-              userDetails ?
-              <ul className="s-hide">
+              userDetails
+                ? <ul className="s-hide">
                 <li>
                   <a
                     href="javascript:;"
@@ -40,14 +47,16 @@ export class Header extends React.Component {
                     </sup>
                   </a>
                 </li>
-                <li className="user-logout">
+                <li>
                   <a href="profile.html"><i className="ti-user"></i></a>
                 </li>
-                <li className="user-logout">
-                  <a href="javascript:;" className="logout"><i className="ti-power-off"></i></a>
+                <li>
+                  <a href="javascript:;" className="logout">
+                    <i className="ti-power-off"></i>
+                  </a>
                 </li>
-              </ul>:
-              <ul className="s-hide">
+              </ul>
+                : <ul className="s-hide">
                 <li>
                   <a
                     href="javascript:;"
@@ -60,8 +69,8 @@ export class Header extends React.Component {
                     </sup>
                   </a>
                 </li>
-                <li className="user-login"><Link to="/login">Login</Link></li>
-                <li className="user-login"><Link to="/signup">Sign Up</Link></li>
+                <li><Link to="/login">Login</Link></li>
+                <li><Link to="/signup">Sign Up</Link></li>
               </ul>
             }
             <div id="shoppingcart" className="cart-div hide">
@@ -76,20 +85,33 @@ export class Header extends React.Component {
             </div>
             <ul className="l-hide">
               <li>
-                <a href="javascript:;" id="shoppingcart-b" className="shoppingcart-b"><i className="ti ti-shopping-cart"></i><sup className="itemsincart">0</sup></a>
+                <a
+                  href="javascript:;"
+                  id="shoppingcart-b"
+                  className="shoppingcart-b"
+                >
+                  <i className="ti ti-shopping-cart"></i>
+                  <sup className="itemsincart">0</sup>
+                </a>
               </li>
               <li className="">
-                <a href="javascript:;" className="menu" id="toggle"><i className="ti ti-menu"></i></a>
+                <a href="javascript:;" className="menu" id="toggle">
+                  <i className="ti ti-menu"></i>
+                </a>
                 <div className="dropdown hide" id="dropdown">
                   {
-                    userDetails ?
-                    <ul>
-                      <li className="user-logout"><a href="profile.html">Profile</a></li>
-                      <li className="user-logout"><a href="javascript:;" className="logout">Logout</a></li>
-                    </ul>:
-                    <ul>
-                      <li className="user-login"><Link to="/login">Login</Link></li>
-                      <li className="user-login"><Link to="/signup">Sign Up</Link></li>
+                    userDetails
+                      ? <ul>
+                      <li>
+                        <a href="profile.html">Profile</a>
+                      </li>
+                      <li>
+                        <a href="javascript:;" className="logout">Logout</a>
+                      </li>
+                    </ul>
+                      : <ul>
+                      <li><Link to="/login">Login</Link></li>
+                      <li><Link to="/signup">Sign Up</Link></li>
                     </ul>
                   }
                 </div>
@@ -98,9 +120,16 @@ export class Header extends React.Component {
           </nav>
         </header>
       </div>
-    )
+    );
   }
 }
+
+Header.propTypes = {
+  userData: PropTypes.func.isRequired,
+  auth: PropTypes.shape({
+    user: PropTypes.object,
+  }),
+};
 
 export const mapStateToProps = state => ({
   auth: state.auth,

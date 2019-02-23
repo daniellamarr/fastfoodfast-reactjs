@@ -1,15 +1,16 @@
-import Helpers from "./Helpers";
+import Helpers from './Helpers';
 import { FETCH_MENU } from './types';
 
-export const getAllMenu = () => async dispatch => {
+// eslint-disable-next-line import/prefer-default-export
+export const getAllMenu = () => async (dispatch) => {
   try {
-    const [ payload ] = await Promise.all([Helpers.axiosGet('/menu')]);
+    const [payload] = await Promise.all([Helpers.axiosGet('/menu')]);
     const { menu } = payload.data;
     dispatch({
       type: FETCH_MENU,
       payload: menu,
     });
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
+};

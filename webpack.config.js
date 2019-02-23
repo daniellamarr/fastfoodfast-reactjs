@@ -7,24 +7,24 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
-      }
-    ]
+        use: ['babel-loader'],
+      },
+    ],
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx']
+    extensions: ['*', '.js', '.jsx'],
   },
   output: {
     path: __dirname + '/dist',
     publicPath: '/',
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
   ],
   devServer: {
     contentBase: './public',
     hot: true,
     historyApiFallback: true,
-  }
+  },
 };

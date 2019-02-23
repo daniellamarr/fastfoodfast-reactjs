@@ -1,12 +1,20 @@
-import { SIGNUP, SET_REQUEST, SET_USER_ERROR, SET_CURRENT_USER, } from '../actions/types';
+import {
+  SIGNUP, SET_REQUEST, SET_USER_ERROR, SET_CURRENT_USER,
+} from '../actions/types';
 
 const initialState = {
   response: {},
   loadingStatus: false,
-}
+};
 
-export default function(state = initialState, action) {
-  switch(action.type) {
+/**
+ * Menu Reducer
+ * @param {object} state
+ * @param {object} action
+ * @returns {object} current state
+ */
+export default function (state = initialState, action) {
+  switch (action.type) {
     case SET_REQUEST:
       return {
         loadingStatus: true,
@@ -24,8 +32,8 @@ export default function(state = initialState, action) {
     case SET_CURRENT_USER:
       return {
         ...state,
-        user: action.payload
-      }
+        user: action.payload,
+      };
     default:
       return state;
   }
