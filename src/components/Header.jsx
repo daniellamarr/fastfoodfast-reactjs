@@ -48,7 +48,7 @@ export class Header extends React.Component {
                   </a>
                 </li>
                 <li>
-                  <a href="profile.html"><i className="ti-user"></i></a>
+                  <Link to="/profile"><i className="ti-user"></i></Link>
                 </li>
                 <li>
                   <a href="javascript:;" className="logout">
@@ -103,7 +103,7 @@ export class Header extends React.Component {
                     userDetails
                       ? <ul>
                       <li>
-                        <a href="profile.html">Profile</a>
+                        <Link to="/profile">Profile</Link>
                       </li>
                       <li>
                         <a href="javascript:;" className="logout">Logout</a>
