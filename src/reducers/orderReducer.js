@@ -6,7 +6,7 @@ const initialState = {
 };
 
 /**
- * Menu Reducer
+ * Order Reducer
  * @param {object} state
  * @param {object} action
  * @returns {object} current state
