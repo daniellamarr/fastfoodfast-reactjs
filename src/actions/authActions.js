@@ -83,3 +83,8 @@ export const userData = () => async (dispatch) => {
     return false;
   }
 };
+
+export const logOut = () => {
+  localStorage.removeItem('userDetails');
+  return setTimeout(() => { window.location.href = '/login'; }, 500);
+};

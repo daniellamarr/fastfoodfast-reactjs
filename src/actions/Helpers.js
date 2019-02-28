@@ -10,15 +10,17 @@ export default class Helpers {
   /**
    * Axios Get Request
    * @param {string} url endpoint for get request
+   * @param {string} headers headers for get request
    * @returns {object} response object
    */
-  static async axiosGet(url) {
-    try {
-      const response = await axios.get(path + url);
-      return response;
-    } catch (error) {
-      return error;
-    }
+  static async axiosGet(url, headers) {
+    const response = await axios.get(
+      path + url,
+      {
+        headers,
+      },
+    );
+    return response;
   }
 
   /**
