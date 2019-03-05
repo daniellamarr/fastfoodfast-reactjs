@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Component should match snapshot 1`] = `
+<div>
+  <footer>
+    <div>
+      <p>
+        <a
+          href="index.html"
+        >
+          Fast-Food-Fast
+        </a>
+      </p>
+      <p>
+        Developed by
+        <a
+          href="https://github.com/daniellamarr"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Daniel Lamarr
+        </a>
+      </p>
+    </div>
+  </footer>
+</div>
+`;

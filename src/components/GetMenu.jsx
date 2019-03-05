@@ -6,7 +6,7 @@ import { getAllMenu } from '../actions/Menu';
 /**
  * GetMenu
  */
-class GetMenu extends React.Component {
+export class GetMenu extends React.Component {
   /**
    * Initialized functions for component
    * @returns {null} null
@@ -65,7 +65,7 @@ GetMenu.propTypes = {
   menuStatus: PropTypes.bool.isRequired,
 };
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   menuItems: state.menus.menus,
   menuStatus: state.menus.menuStatus,
 });

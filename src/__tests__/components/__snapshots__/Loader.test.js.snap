@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loader Component should match snapshot 1`] = `
+<div
+  id="loader"
+>
+  <center>
+    <img
+      alt="loading..."
+      src="images/loader.gif"
+      width="80px"
+    />
+  </center>
+</div>
+`;

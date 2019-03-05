@@ -7,7 +7,7 @@ import Loader from '../components/Loader.jsx';
 /**
  * Signup
  */
-class Signup extends Component {
+export class Signup extends Component {
   /**
    * Constructor
    */

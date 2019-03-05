@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loader Component should match snapshot 1`] = `
+<Signup
+  auth={
+    Object {
+      "loadingStatus": false,
+    }
+  }
+  userSignup={[Function]}
+>
+  <div
+    id="loginPage"
+  >
+    <section
+      id="login"
+    >
+      <center>
+        <div
+          className="login"
+        >
+          <h4>
+            Quench your hunger, Sign up today
+          </h4>
+          <form
+            id="signupForm"
+            method="post"
+            onSubmit={[Function]}
+          >
+            <input
+              id="name"
+              name="name"
+              onChange={[Function]}
+              placeholder="Firstname"
+              required={true}
+              type="text"
+            />
+            <input
+              id="email"
+              name="email"
+              onChange={[Function]}
+              placeholder="Email"
+              required={true}
+              type="email"
+            />
+            <input
+              id="phone"
+              name="phone"
+              onChange={[Function]}
+              placeholder="Phone Number"
+              required={true}
+              type="tel"
+            />
+            <input
+              id="address"
+              name="address"
+              onChange={[Function]}
+              placeholder="Location"
+              required={true}
+              type="tel"
+            />
+            <input
+              id="password"
+              name="password"
+              onChange={[Function]}
+              placeholder="Password"
+              required={true}
+              type="password"
+            />
+            <input
+              id="cpassword"
+              name="cpassword"
+              onChange={[Function]}
+              placeholder="Password"
+              required={true}
+              type="password"
+            />
+            <button
+              type="submit"
+            >
+              Sign up 
+            </button>
+          </form>
+        </div>
+      </center>
+    </section>
+    <div
+      className="error hide"
+    />
+  </div>
+</Signup>
+`;

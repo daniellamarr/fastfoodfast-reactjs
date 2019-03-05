@@ -1,0 +1,15 @@
+{
+  "setupFilesAfterEnv": ["<rootDir>src/__tests__/setup/setupEnzyme.js", "<rootDir>src/__tests__/setup/setup.config.js"],
+  "snapshotSerializers": ["enzyme-to-json/serializer"],
+  "testPathIgnorePatterns": [
+    "<rootDir>/src/__tests__/__mocks__/",
+    "<rootDir>/src/__tests__/setup/"
+  ],
+  "coveragePathIgnorePatterns": [
+    "/src/utils"
+  ],
+  "moduleNameMapper": {
+    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>src/__tests__/__mocks__/fileMock.js",
+    "\\.(css|less|scss)$": "<rootDir>src/__tests__/__mocks__/styleMock.js"
+  }
+}
