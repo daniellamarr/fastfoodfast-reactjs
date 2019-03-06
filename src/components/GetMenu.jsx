@@ -3,7 +3,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getAllMenu } from '../actions/Menu';
-import addToCart from '../utils/addToCart';
 
 /**
  * GetMenu
