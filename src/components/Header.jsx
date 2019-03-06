@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { userData } from '../actions/authActions';
 import { onToggle, shoppingCart } from '../utils/utilityScript';
+import Cart from './Cart.jsx';
+import { getCartItems } from '../actions/cartActions';
 
 /**
  * Header
@@ -16,6 +18,7 @@ export class Header extends React.Component {
    */
   componentDidMount() {
     this.props.userData();
+    this.props.getCartItems();
     onToggle('toggle', 'dropdown');
     shoppingCart();
   }
@@ -43,7 +46,9 @@ export class Header extends React.Component {
                   >
                     <i className="ti-shopping-cart"></i>
                     <sup>
-                      <span className="badge itemsincart">0</span>
+                      <span className="badge itemsincart">
+                        {this.props.cart.noOfItems}
+                      </span>
                     </sup>
                   </a>
                 </li>
@@ -65,7 +70,9 @@ export class Header extends React.Component {
                   >
                     <i className="ti-shopping-cart"></i>
                     <sup>
-                      <span className="badge itemsincart">0</span>
+                      <span className="badge itemsincart">
+                        {this.props.cart.noOfItems}
+                      </span>
                     </sup>
                   </a>
                 </li>
@@ -74,9 +81,14 @@ export class Header extends React.Component {
               </ul>
             }
             <div id="shoppingcart" className="cart-div hide">
-              <p>You have <span className="itemsincart">0</span> item(s)</p>
+              <p>You have&nbsp;
+                <span className="itemsincart">
+                  {this.props.cart.noOfItems}
+                </span>
+                &nbsp;item(s)
+              </p>
               <ul className="cart-details">
-                <div id="cart-details"></div>
+                <Cart />
                 <li>
                   <a href="order.html"><button>View Cart</button></a>
                 </li>
@@ -91,7 +103,9 @@ export class Header extends React.Component {
                   className="shoppingcart-b"
                 >
                   <i className="ti ti-shopping-cart"></i>
-                  <sup className="itemsincart">0</sup>
+                  <sup className="itemsincart">
+                    {this.props.cart.noOfItems}
+                  </sup>
                 </a>
               </li>
               <li className="">
@@ -126,13 +140,21 @@ export class Header extends React.Component {
 
 Header.propTypes = {
   userData: PropTypes.func.isRequired,
+  getCartItems: PropTypes.func.isRequired,
   auth: PropTypes.shape({
     user: PropTypes.object,
+  }),
+  cart: PropTypes.shape({
+    cart: PropTypes.arrayOf(PropTypes.shape({
+      title: PropTypes.string.isRequired,
+    })),
+    noOfItems: PropTypes.number,
   }),
 };
 
 export const mapStateToProps = state => ({
   auth: state.auth,
+  cart: state.cart,
 });
 
-export default connect(mapStateToProps, { userData })(Header);
+export default connect(mapStateToProps, { userData, getCartItems })(Header);
