@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getAllMenu } from '../actions/Menu';
+import { addToCart } from '../actions/cartActions';
 
 /**
  * GetMenu
@@ -58,12 +59,13 @@ class GetMenu extends React.Component {
               className="quantityField"
               defaultValue="1"
               min={1}
+              max={10}
               onChange={this.onChange}
             />
             <br /><br />
             <button
               className="addtocart"
-              onClick={() => addToCart({
+              onClick={() => this.props.addToCart({
                 id: menuItem.id,
                 title: menuItem.title,
                 quantity: parseInt(this.state.quantity),
@@ -92,6 +94,7 @@ class GetMenu extends React.Component {
 
 GetMenu.propTypes = {
   getAllMenu: PropTypes.func.isRequired,
+  addToCart: PropTypes.func.isRequired,
   menuItems: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
@@ -105,4 +108,4 @@ const mapStateToProps = state => ({
   menuStatus: state.menus.menuStatus,
 });
 
-export default connect(mapStateToProps, { getAllMenu })(GetMenu);
+export default connect(mapStateToProps, { getAllMenu, addToCart })(GetMenu);

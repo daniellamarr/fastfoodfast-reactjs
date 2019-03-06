@@ -9,30 +9,11 @@ import { getCartItems } from '../actions/cartActions';
  */
 export class Cart extends Component {
   /**
-   * Constructor
-   */
-  constructor() {
-    super();
-
-    this.state = {
-      items: [],
-    };
-  }
-
-  /**
    * Initialized functions for component
    * @returns {null} null
    */
   componentDidMount() {
     this.props.getCartItems();
-  }
-
-  /**
-   * @returns {null} null
-   */
-  getCartItems() {
-    const items = JSON.parse(localStorage.getItem('items'));
-    this.setState({ items });
   }
 
   /**
@@ -43,21 +24,19 @@ export class Cart extends Component {
       <div>
         <ul>
         {
-          this.props.cart.cart.map((item) => {
-            return (
-              <li key={item.id}>
-                <a href={`menu/${item.id}`}>
-                  <img src={item.image} alt=""/>
-                  <p className="cart-title">
-                    {item.title}
-                  </p>
-                  <p>
-                    {`${item.quantity} x ${item.price}`}
-                  </p>
-                </a>
-              </li>
-            );
-          })
+          this.props.cart.cart.map(item => (
+            <li key={item.id}>
+              <a href={`menu/${item.id}`}>
+                <img src={item.image} alt=""/>
+                <p className="cart-title">
+                  {item.title}
+                </p>
+                <p>
+                  {`${item.quantity} x ${item.price}`}
+                </p>
+              </a>
+            </li>
+          ))
         }
         </ul>
       </div>

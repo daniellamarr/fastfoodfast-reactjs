@@ -8,19 +8,21 @@ export const setCartItems = items => ({
 });
 
 export const getCartItems = () => (dispatch) => {
-  const items = JSON.parse(localStorage.getItem('items'));
-  dispatch(setCartItems(items));
-};
-
-export const addToCart = (menu) => {
   let items = [];
   const getItems = localStorage.getItem('items');
   if (getItems !== null) {
     items = JSON.parse(getItems);
   }
-  const checkIfMenuExistsInCart = items.some((item) => {
-    return item.title === menu.title;
-  });
+  dispatch(setCartItems(items));
+};
+
+export const addToCart = menu => (dispatch) => {
+  let items = [];
+  const getItems = localStorage.getItem('items');
+  if (getItems !== null) {
+    items = JSON.parse(getItems);
+  }
+  const checkIfMenuExistsInCart = items.some(item => item.title === menu.title);
   const quantity = parseInt(document.getElementById(`qty${menu.id}`).value);
   if (!checkIfMenuExistsInCart) {
     items.push(menu);
@@ -30,6 +32,6 @@ export const addToCart = (menu) => {
   }
 
   localStorage.setItem('items', JSON.stringify(items));
-  getCartItems();
+  dispatch(setCartItems(items));
   return true;
 };
