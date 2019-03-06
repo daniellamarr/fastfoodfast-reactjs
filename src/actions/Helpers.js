@@ -27,12 +27,16 @@ export default class Helpers {
    * Axios Post Request
    * @param {string} url endpoint for get request
    * @param {object} body request object parameters
+   * @param {object} headers headers
    * @returns {object} response object
    */
-  static async axiosPost(url, body) {
+  static async axiosPost(url, body, headers) {
     const response = await axios.post(
       path + url,
       body,
+      {
+        headers,
+      },
     );
     return response;
   }

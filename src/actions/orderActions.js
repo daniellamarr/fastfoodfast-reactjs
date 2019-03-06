@@ -27,3 +27,30 @@ export const getAllOrders = () => async (dispatch) => {
     }
   }
 };
+
+export const placeOrder = () => async (dispatch) => {
+  try {
+    const userDetails = localStorage.getItem('userDetails');
+    const { token } = JSON.parse(userDetails);
+    const items = [];
+    const getItems = JSON.parse(localStorage.getItem('items'));
+    getItems.map((item) => {
+      const cart = {
+        order: item.title,
+        quantity: item.quantity,
+      };
+      items.push(cart);
+      return true;
+    });
+    const order = await Helpers.axiosPost(
+      '/orders',
+      { menu: items },
+      {
+        'x-access-token': token,
+      },
+    );
+    console.log(order);
+  } catch (error) {
+    console.log(error.response);
+  }
+};

@@ -3,6 +3,7 @@ import { GET_CART } from '../actions/types';
 const initialState = {
   cart: [],
   noOfItems: 0,
+  cartStatus: false,
 };
 
 /**
@@ -18,6 +19,7 @@ export default function (state = initialState, action) {
         ...state,
         cart: action.payload,
         noOfItems: action.noOfItems,
+        cartStatus: true,
       };
     default:
       return state;

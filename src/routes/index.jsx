@@ -7,6 +7,7 @@ import Signup from './Signup.jsx';
 import Login from './Login.jsx';
 import Profile from './Profile.jsx';
 import SingleMenu from './SingleMenu.jsx';
+import Checkout from './Checkout.jsx';
 
 const Container = () => (
   <div>
@@ -16,6 +17,7 @@ const Container = () => (
       <Route path="/login" component={Login} />
       <Route path="/profile" component={Profile} />
       <Route path="/menu/:id" component={SingleMenu} />
+      <Route path="/checkout" component={Checkout} />
     </Switch>
   </div>
 );
