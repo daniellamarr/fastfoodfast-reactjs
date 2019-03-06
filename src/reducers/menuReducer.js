@@ -1,7 +1,8 @@
-import { FETCH_MENU } from '../actions/types';
+import { FETCH_MENU, FETCH_SINGLE_MENU } from '../actions/types';
 
 const initialState = {
   menus: [],
+  menu: {},
   menuStatus: false,
 };
 
@@ -17,6 +18,12 @@ export default function (state = initialState, action) {
       return {
         ...state,
         menus: action.payload,
+        menuStatus: true,
+      };
+    case FETCH_SINGLE_MENU:
+      return {
+        ...state,
+        menu: action.payload,
         menuStatus: true,
       };
     default:

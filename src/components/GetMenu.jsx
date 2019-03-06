@@ -47,7 +47,7 @@ class GetMenu extends React.Component {
       <div key={menuItem.id} className="item">
         <img src={menuItem.image} alt="" />
         <div className="item-text">
-          <a href={`menu.html#menu_${menuItem.id}`}>
+          <a href={`/menu/${menuItem.id}`}>
             {menuItem.title}
             <h5 className="price">N{menuItem.price}</h5>
           </a>
@@ -84,9 +84,10 @@ class GetMenu extends React.Component {
         {this.props.menuStatus
           ? menuItems
           : <center>
-            <img src="images/loader.gif" alt="loading..." width="100px" />
+            <img src="/images/loader.gif" alt="loading..." width="100px" />
           </center>
         }
+        <div className="clear"></div>
       </div>
     );
   }
