@@ -90,7 +90,7 @@ export class Header extends React.Component {
               <ul className="cart-details">
                 <Cart />
                 <li>
-                  <a href="order.html"><button>View Cart</button></a>
+                  <Link to="/checkout"><button>View Cart</button></Link>
                 </li>
                 <div className="clear"></div>
               </ul>

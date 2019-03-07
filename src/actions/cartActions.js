@@ -35,3 +35,17 @@ export const addToCart = menu => (dispatch) => {
   dispatch(setCartItems(items));
   return true;
 };
+
+export const deleteItem = id => (dispatch) => {
+  let items = [];
+  const getItems = localStorage.getItem('items');
+  if (getItems !== null) {
+    items = JSON.parse(getItems);
+  }
+  items.splice(id, 1);
+  localStorage.setItem('items', JSON.stringify(items));
+  if (items.length === 0) {
+    localStorage.removeItem('items');
+  }
+  dispatch(setCartItems(items));
+};
