@@ -2,7 +2,11 @@
 /* eslint-disable no-undef */
 import 'babel-polyfill';
 import React from 'react';
-import { mount } from 'enzyme';
+import { MemoryRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+import configureMockStore from 'redux-mock-store';
+import { mount, shallow } from 'enzyme';
 import sinon from 'sinon';
 import { Header } from '../../components/Header.jsx';
 
@@ -10,13 +14,27 @@ let wrapper;
 
 const props = {
   userData: () => {},
+  getCartItems: () => {},
   auth: {
     user: {},
   },
+  cart: {
+    noOfItems: 0,
+  },
 };
+
+const middlewares = [thunk];
+
+const mockStore = configureMockStore(middlewares);
+const store = mockStore();
+
 beforeEach(() => {
-  wrapper = mount(
-    <Header {...props} />,
+  wrapper = shallow(
+    <Provider store={store}>
+      <MemoryRouter>
+        <Header {...props} />
+      </MemoryRouter>
+    </Provider>,
   );
 });
 

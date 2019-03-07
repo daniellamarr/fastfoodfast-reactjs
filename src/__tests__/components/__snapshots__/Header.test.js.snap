@@ -1,3 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header Component should match snapshot 1`] = `undefined`;
+exports[`Header Component should match snapshot 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "storeState": Object {},
+    }
+  }
+>
+  <MemoryRouter>
+    <Header
+      auth={
+        Object {
+          "user": Object {},
+        }
+      }
+      cart={
+        Object {
+          "noOfItems": 0,
+        }
+      }
+      getCartItems={[Function]}
+      userData={[Function]}
+    />
+  </MemoryRouter>
+</ContextProvider>
+`;

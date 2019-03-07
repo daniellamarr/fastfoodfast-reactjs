@@ -1,0 +1,160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile Component should match snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Profile
+    auth={
+      Object {
+        "user": Object {
+          "user": Object {
+            "email": "Test Email",
+            "name": "Test User",
+          },
+        },
+      }
+    }
+    getAllOrders={[Function]}
+    orders={
+      Object {
+        "orderStatus": true,
+        "orders": Array [
+          Object {
+            "food": Array [
+              Object {
+                "orderid": "Test food",
+                "quantity": 5,
+              },
+            ],
+          },
+        ],
+      }
+    }
+    userData={[Function]}
+  >
+    <div>
+      <div
+        className="profileLoader"
+      >
+        <Loader>
+          <div
+            id="loader"
+          >
+            <center>
+              <img
+                alt="loading..."
+                src="images/loader.gif"
+                width="80px"
+              />
+            </center>
+          </div>
+        </Loader>
+      </div>
+      <section
+        id="profile"
+      >
+        <div
+          className="profile-details"
+        >
+          <h3
+            className="userFullName"
+          >
+            Test User
+          </h3>
+          <br />
+          <h4
+            className="userEmail"
+          >
+            Test Email
+          </h4>
+        </div>
+        <div
+          className="profile"
+        >
+          <center>
+            <div
+              className="profileImage"
+            />
+          </center>
+        </div>
+      </section>
+      <section
+        id="profile-bar"
+      />
+      <section
+        id="profile-section"
+      >
+        <div
+          className="profileOrders"
+        >
+          <center>
+            <h3>
+              Your Orders
+            </h3>
+          </center>
+          <div
+            className="table"
+          >
+            <table
+              className="order-table"
+            >
+              <thead>
+                <tr>
+                  <th>
+                    S/N
+                  </th>
+                  <th>
+                    Products
+                  </th>
+                  <th>
+                    Price(N)
+                  </th>
+                  <th>
+                    Status
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                id="userorders"
+              >
+                <tr>
+                  <td>
+                    Order undefined
+                  </td>
+                  <td>
+                    <a
+                      className="default-text"
+                      href="javascript:;"
+                    >
+                      Test food - 5
+
+                    </a>
+                  </td>
+                  <td />
+                  <td />
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div
+          className="clear"
+        />
+      </section>
+      <div
+        className="error hide"
+      />
+    </div>
+  </Profile>
+</Provider>
+`;

@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SingleMenu Component should match snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Cart
+    cart={
+      Object {
+        "cart": Array [
+          Object {
+            "title": "Hello Test",
+          },
+        ],
+        "noOfItems": 1,
+      }
+    }
+    getCartItems={[Function]}
+  >
+    <div>
+      <ul>
+        <li>
+          <a
+            href="menu/undefined"
+          >
+            <img
+              alt=""
+            />
+            <p
+              className="cart-title"
+            >
+              Hello Test
+            </p>
+            <p>
+              undefined x undefined
+            </p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </Cart>
+</Provider>
+`;

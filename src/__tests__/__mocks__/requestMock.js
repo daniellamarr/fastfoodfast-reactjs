@@ -23,3 +23,22 @@ export const badSignupData = {
 export const badLoginData = {
   email: 'danielchidiebele@gmail.com',
 };
+
+export const mockMenuID = 39;
+
+export const newCartItem = {
+  id: 20,
+  title: 'Test menu',
+  quantity: 4,
+  price: 3000,
+  image: 'some image url',
+};
+
+export const updatedCartItem = {
+  id: 6,
+  title: 'Spaghetti',
+  price: '2000',
+  quantity: '4',
+  image: `https://res.cloudinary.com/daniel-lamarr/image/upload/
+    v1539291318/uploads/ttr4c5cota4wsdh3xfeh.jpg`,
+};

@@ -2,10 +2,11 @@ import 'babel-polyfill';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import moxios from 'moxios';
-import { getAllMenu } from '../../actions/Menu';
-import { getMenuMock } from '../__mocks__/responseMock';
-import { FETCH_MENU } from '../../actions/types';
+import { getAllMenu, getSingleMenu } from '../../actions/Menu';
+import { getMenuMock, getSingleMenuMock } from '../__mocks__/responseMock';
+import { FETCH_MENU, FETCH_SINGLE_MENU } from '../../actions/types';
 import { path } from '../../actions/Helpers';
+import { mockMenuID } from '../__mocks__/requestMock';
 
 const middlewares = [thunk];
 
@@ -23,17 +24,6 @@ describe('Menu Actions Test', () => {
   });
 
   test('Get all menu items', async () => {
-    // moxios.wait(() => {
-    //   const request = moxios.requests.mostRecent();
-    //   request.respondWith({
-    //     status: 200,
-    //     response: {
-    //       data: {
-    //         menu: getMenuMock,
-    //       },
-    //     },
-    //   });
-    // });
     moxios.stubRequest(`${path}/menu`, {
       status: 200,
       response: {
@@ -48,6 +38,24 @@ describe('Menu Actions Test', () => {
     ];
 
     await store.dispatch(getAllMenu());
+    expect(store.getActions()).toEqual(expectedActions);
+  });
+
+  test('Get a single menu item', async () => {
+    moxios.stubRequest(`${path}/menu/${mockMenuID}`, {
+      status: 200,
+      response: {
+        menu: getSingleMenuMock,
+      },
+    });
+    const expectedActions = [
+      {
+        type: FETCH_SINGLE_MENU,
+        payload: getSingleMenuMock,
+      },
+    ];
+
+    await store.dispatch(getSingleMenu(mockMenuID));
     expect(store.getActions()).toEqual(expectedActions);
   });
 });

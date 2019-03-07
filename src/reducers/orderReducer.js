@@ -1,30 +1,29 @@
-import { FETCH_MENU, FETCH_SINGLE_MENU } from '../actions/types';
+import { GET_USER_ORDERS, SET_ORDER_REQUEST } from '../actions/types';
 
 const initialState = {
-  menus: [],
-  menu: {},
-  menuStatus: false,
+  orders: [],
+  orderStatus: true,
+  loadingStatus: false,
 };
 
 /**
- * Menu Reducer
+ * Order Reducer
  * @param {object} state
  * @param {object} action
  * @returns {object} current state
  */
 export default function (state = initialState, action) {
   switch (action.type) {
-    case FETCH_MENU:
+    case SET_ORDER_REQUEST:
       return {
         ...state,
-        menus: action.payload,
-        menuStatus: true,
+        loadingStatus: true,
       };
-    case FETCH_SINGLE_MENU:
+    case GET_USER_ORDERS:
       return {
         ...state,
-        menu: action.payload,
-        menuStatus: true,
+        orders: action.payload,
+        orderStatus: false,
       };
     default:
       return state;

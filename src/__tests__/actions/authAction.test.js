@@ -2,7 +2,7 @@ import 'babel-polyfill';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import moxios from 'moxios';
-import { userLogin, userSignup } from '../../actions/authActions';
+import { userLogin, userSignup, userData } from '../../actions/authActions';
 import {
   SET_CURRENT_USER,
   SET_REQUEST, SIGNUP,
@@ -114,6 +114,15 @@ describe('Auth Actions Test', () => {
   });
 
   xtest('Check if a user is logged in', async () => {
+    const user = localStorage.getItem('userDetails');
+    const expectedActions = [
+      {
+        type: SET_CURRENT_USER,
+        payload: user,
+      },
+    ];
+    await store.dispatch(userData());
     expect(localStorage.getItem).toBeCalledWith('userdetails');
+    expect(store.getActions()).toEqual(expectedActions);
   });
 });
