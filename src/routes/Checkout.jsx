@@ -112,10 +112,12 @@ export class Checkout extends Component {
           <button
             id="ordernow"
             onClick={() => this.props.placeOrder()}
+            disabled={this.props.orders.loadingStatus}
           >
-            Place Order
+            {this.props.orders.loadingStatus ? 'Loading. . .' : 'Place Order'}
           </button>
         </section>
+        <div className="error hide"></div>
       </div>
     );
   }
@@ -132,10 +134,14 @@ Checkout.propTypes = {
     noOfItems: PropTypes.number,
     cartStatus: PropTypes.bool,
   }),
+  orders: PropTypes.shape({
+    loadingStatus: PropTypes.bool,
+  }),
 };
 
 export const mapStateToProps = state => ({
   cart: state.cart,
+  orders: state.orders,
 });
 
 export default connect(mapStateToProps,
