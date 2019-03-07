@@ -80,7 +80,9 @@ exports[`Profile Component should match snapshot 1`] = `
             <tbody
               id="cartorders"
             >
-              <tr>
+              <tr
+                key="0"
+              >
                 <td>
                   <img
                     alt="Product Image"

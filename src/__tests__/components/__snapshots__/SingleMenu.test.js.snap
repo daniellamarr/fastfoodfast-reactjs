@@ -1,3 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SingleMenu Component should match snapshot 1`] = `undefined`;
+exports[`SingleMenu Component should match snapshot 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "storeState": Object {},
+    }
+  }
+>
+  <SingleMenu
+    addToCart={[Function]}
+    getSingleMenu={[Function]}
+    match={
+      Object {
+        "params": Object {
+          "id": "1",
+        },
+      }
+    }
+    menu={Object {}}
+    menuStatus={false}
+    menus={
+      Array [
+        Object {},
+      ]
+    }
+  />
+</ContextProvider>
+`;

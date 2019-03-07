@@ -28,7 +28,9 @@ exports[`SingleMenu Component should match snapshot 1`] = `
   >
     <div>
       <ul>
-        <li>
+        <li
+          key="0"
+        >
           <a
             href="menu/undefined"
           >

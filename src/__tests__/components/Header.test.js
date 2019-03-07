@@ -46,11 +46,4 @@ describe('Header Component', () => {
   it('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
-
-  it('should find shoppingCart()', () => {
-    sinon.spy(wrapper.instance(), 'componentDidMount');
-    wrapper.instance().componentDidMount().shoppingCart();
-    expect(wrapper.instance()
-      .componentDidMount.calledOnce).toEqual(true);
-  });
 });

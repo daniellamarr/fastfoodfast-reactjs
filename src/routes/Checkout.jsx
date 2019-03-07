@@ -65,7 +65,7 @@ export class Checkout extends Component {
                     const quantityPrice = item.price * item.quantity;
                     this.state.sumOfPrices.push(quantityPrice);
                     return (
-                      <tr key={item.id}>
+                      <tr key={index}>
                         <td>
                           <img
                             src={item.image}

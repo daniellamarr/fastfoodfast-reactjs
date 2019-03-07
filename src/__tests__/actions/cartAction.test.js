@@ -79,7 +79,8 @@ describe('Cart Actions Test', () => {
     expect(store.getActions()).toEqual(expectedActions);
   });
 
-  xtest('Delete items from localStorage', async () => {
+  test('Delete items from localStorage', async () => {
+    localStorage.removeItem('items');
     cartItems.splice(0);
     const expectedActions = [
       {

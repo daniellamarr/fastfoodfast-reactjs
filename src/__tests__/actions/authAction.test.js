@@ -113,16 +113,14 @@ describe('Auth Actions Test', () => {
     expect(store.getActions()).toEqual(expectedActions);
   });
 
-  xtest('Check if a user is logged in', async () => {
-    const user = localStorage.getItem('userDetails');
+  test('Check if a user is logged in', async () => {
     const expectedActions = [
       {
         type: SET_CURRENT_USER,
-        payload: user,
+        payload: loginMock,
       },
     ];
     await store.dispatch(userData());
-    expect(localStorage.getItem).toBeCalledWith('userdetails');
     expect(store.getActions()).toEqual(expectedActions);
   });
 });

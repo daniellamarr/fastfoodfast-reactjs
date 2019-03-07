@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
@@ -27,18 +27,19 @@ const props = {
 };
 
 beforeEach(() => {
-  wrapper = mount(
+  wrapper = shallow(
     <Provider store={store}>
       <SingleMenu {...props} />
     </Provider>,
   );
 });
-afterEach(() => {
-  wrapper.unmount();
-});
 
 describe('SingleMenu Component', () => {
-  xit('should match snapshot', () => {
+  it('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
+
+  // it('click addtocart button', () => {
+  //   wrapper.find('#addtocart').simulate('click');
+  // });
 });

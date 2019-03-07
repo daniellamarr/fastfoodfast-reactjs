@@ -38,18 +38,4 @@ describe('GetMenu Component', () => {
   it('should find button addtocart', () => {
     expect(wrapper.find('.addtocart').length).toEqual(0);
   });
-
-  xit('should find onChange()', () => {
-    const onChangeMock = jest.fn();
-    const e = {
-      target: { name: 'quantity', value: 'the-value' },
-    };
-    wrapper.find('input').simulate('change', e);
-    expect(wrapper.state().quantity).toEqual(e.target.value);
-  });
-
-  // it('should render', () => {
-  //   const menuStatus = true;
-  //   expect(wrapper.props().menuStatus).toBe(true);
-  // });
 });

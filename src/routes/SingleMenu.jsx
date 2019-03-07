@@ -76,6 +76,7 @@ export class SingleMenu extends Component {
               onChange={this.onChange}
             />
             <button
+              id="addtocart"
               onClick={() => this.props.addToCart({
                 id: this.props.menu.id,
                 title: this.props.menu.title,

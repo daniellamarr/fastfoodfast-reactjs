@@ -24,14 +24,14 @@ export class Profile extends Component {
    */
   render() {
     const userDetails = this.props.auth.user;
-    const orders = this.props.orders.orders.map((order) => {
+    const orders = this.props.orders.orders.map((order, index) => {
       let meal = '';
       // eslint-disable-next-line arrow-body-style
       meal += order.food.map((foodData) => {
         return `${foodData.orderid} - ${foodData.quantity}\n`;
       });
       return (
-        <tr key={order.id}>
+        <tr key={index}>
           <td>{`Order ${order.id}`}</td>
           <td>
             <a

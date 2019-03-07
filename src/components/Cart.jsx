@@ -24,8 +24,8 @@ export class Cart extends Component {
       <div>
         <ul>
         {
-          this.props.cart.cart.map(item => (
-            <li key={item.id}>
+          this.props.cart.cart.map((item, index) => (
+            <li key={index}>
               <a href={`menu/${item.id}`}>
                 <img src={item.image} alt=""/>
                 <p className="cart-title">
