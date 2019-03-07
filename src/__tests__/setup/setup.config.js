@@ -34,4 +34,8 @@ class LocalStorageMock {
   }
 }
 
+global.document = {
+  getElementsByClassName: document.getElementsByClassName,
+};
+
 global.localStorage = LocalStorageMock;
