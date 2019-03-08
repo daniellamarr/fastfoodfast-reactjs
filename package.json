@@ -9,7 +9,7 @@
     "build": "webpack --mode production",
     "test": "jest --config=jest.config.json --env=jsdom  --u --coverage --colors",
     "test:watch": "jest --watch",
-    "coveralls": "jest --coverage -u && cat ./coverage/lcov.info | coveralls",
+    "coveralls": "jest --config=jest.config.json --coverage -u && cat ./coverage/lcov.info | coveralls",
     "heroku-prebuild": "npm run-script install",
     "heroku-postbuild": "npm run-script build"
   },
