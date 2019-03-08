@@ -8,7 +8,7 @@ import { addToCart } from '../actions/cartActions';
 /**
  * GetMenu
  */
-class GetMenu extends React.Component {
+export class GetMenu extends React.Component {
   /**
    * Constructor
    */
@@ -97,14 +97,14 @@ GetMenu.propTypes = {
   getAllMenu: PropTypes.func.isRequired,
   addToCart: PropTypes.func.isRequired,
   menuItems: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired,
+    id: PropTypes.number,
+    title: PropTypes.string,
+    price: PropTypes.string,
   })),
   menuStatus: PropTypes.bool.isRequired,
 };
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   menuItems: state.menus.menus,
   menuStatus: state.menus.menuStatus,
 });

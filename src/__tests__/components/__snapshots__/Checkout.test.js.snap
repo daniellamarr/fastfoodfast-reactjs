@@ -1,0 +1,142 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile Component should match snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Checkout
+    cart={
+      Object {
+        "cart": Array [
+          Object {
+            "title": "Hello Test",
+          },
+        ],
+        "noOfItems": 1,
+      }
+    }
+    deleteItem={[Function]}
+    getCartItems={[Function]}
+    orders={
+      Object {
+        "loadingStatus": false,
+      }
+    }
+    placeOrder={[Function]}
+  >
+    <div>
+      <section
+        id="order"
+      >
+        <div
+          className="title"
+        >
+          <h1>
+            Checkout
+          </h1>
+          <p>
+            Place your order
+          </p>
+        </div>
+      </section>
+      <section
+        id="checkout"
+      >
+        <div
+          className="table"
+        >
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Product Image
+                </th>
+                <th>
+                  Product
+                </th>
+                <th>
+                  Quantity
+                </th>
+                <th>
+                  Price(N)
+                </th>
+                <th>
+                  Total
+                </th>
+                <th>
+                  Action
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              id="cartorders"
+            >
+              <tr
+                key="0"
+              >
+                <td>
+                  <img
+                    alt="Product Image"
+                    width="80px"
+                  />
+                </td>
+                <td>
+                  Hello Test
+                </td>
+                <td />
+                <td />
+                <td>
+                  NaN
+                </td>
+                <td>
+                  <a
+                    className="red-text"
+                    onClick={[Function]}
+                  >
+                    <i
+                      className="ti-close"
+                    />
+                  </a>
+                </td>
+              </tr>
+              <tr
+                className="tabletotal"
+              >
+                <td
+                  colSpan={4}
+                >
+                  Total:
+                </td>
+                <td>
+                  NaN
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br />
+        <br />
+        <button
+          disabled={false}
+          id="ordernow"
+          onClick={[Function]}
+        >
+          Place Order
+        </button>
+      </section>
+      <div
+        className="error hide"
+      />
+    </div>
+  </Checkout>
+</Provider>
+`;

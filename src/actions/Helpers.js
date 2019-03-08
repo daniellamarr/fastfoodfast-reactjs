@@ -1,7 +1,7 @@
 /* eslint-disable no-plusplus */
 import axios from 'axios';
 
-const path = 'https://daniellamarr-fast-food-fast.herokuapp.com/api/v1';
+export const path = 'https://daniellamarr-fast-food-fast.herokuapp.com/api/v1';
 
 /**
  * Helpers

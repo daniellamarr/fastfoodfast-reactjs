@@ -76,6 +76,7 @@ export class SingleMenu extends Component {
               onChange={this.onChange}
             />
             <button
+              id="addtocart"
               onClick={() => this.props.addToCart({
                 id: this.props.menu.id,
                 title: this.props.menu.title,
@@ -117,7 +118,7 @@ SingleMenu.propTypes = {
   menuStatus: PropTypes.bool.isRequired,
 };
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   menu: state.menus.menu,
   menuStatus: state.menus.menuStatus,
 });

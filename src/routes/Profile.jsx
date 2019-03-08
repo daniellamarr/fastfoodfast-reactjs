@@ -24,14 +24,14 @@ export class Profile extends Component {
    */
   render() {
     const userDetails = this.props.auth.user;
-    const orders = this.props.orders.orders.map((order) => {
+    const orders = this.props.orders.orders.map((order, index) => {
       let meal = '';
       // eslint-disable-next-line arrow-body-style
       meal += order.food.map((foodData) => {
         return `${foodData.orderid} - ${foodData.quantity}\n`;
       });
       return (
-        <tr key={order.id}>
+        <tr key={index}>
           <td>{`Order ${order.id}`}</td>
           <td>
             <a
@@ -48,14 +48,16 @@ export class Profile extends Component {
     });
     return (
       <div>
-      { this.props.orders.orderStatus ? <Loader /> : null }
+        <div className="profileLoader">
+          { this.props.orders.orderStatus ? <Loader /> : null }
+        </div>
         <section id="profile">
           <div className="profile-details">
-            <h3>
+            <h3 className="userFullName">
               {userDetails ? userDetails.user.name : null}
             </h3>
             <br />
-            <h4>
+            <h4 className="userEmail">
               {userDetails ? userDetails.user.email : null}
             </h4>
           </div>

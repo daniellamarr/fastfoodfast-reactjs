@@ -23,7 +23,7 @@ export const addToCart = menu => (dispatch) => {
     items = JSON.parse(getItems);
   }
   const checkIfMenuExistsInCart = items.some(item => item.title === menu.title);
-  const quantity = parseInt(document.getElementById(`qty${menu.id}`).value);
+  const { quantity } = menu;
   if (!checkIfMenuExistsInCart) {
     items.push(menu);
   } else {
