@@ -30,6 +30,12 @@ export const loginMock = {
   },
 };
 
+export const adminMock = {
+  token: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwia2V5IjoiZ
+    GFuaWVsY2hpZGllYmVsZUBnbWFpbC5jb20iLCJpYXQiOjE1NTE5NzM4MTcsImV4cC
+    I6MTU1MjA2MDIxN30.pAhIcLUhd9K0w1vof78x676BcVaXGnPPc7OevsrTFgI`,
+};
+
 export const unauthLogin = {
   status: 'error',
   message: 'No token Provided',

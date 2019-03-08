@@ -12,6 +12,11 @@ export const loginData = {
   password: '12345678',
 };
 
+export const adminData = {
+  email: 'test@admin.com',
+  password: '12345678',
+};
+
 export const badSignupData = {
   email: 'tester@gmail.com',
   phone: '09099887766',

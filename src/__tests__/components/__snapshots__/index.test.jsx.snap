@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container Component should match snapshot 1`] = `
+<div>
+  <Switch>
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <Route
+      component={[Function]}
+      path="/signup"
+    />
+    <Route
+      component={[Function]}
+      path="/login"
+    />
+    <Route
+      component={[Function]}
+      path="/admin/login"
+    />
+    <Route
+      component={[Function]}
+      path="/profile"
+    />
+    <Route
+      component={[Function]}
+      path="/menu/:id"
+    />
+    <Route
+      component={[Function]}
+      path="/checkout"
+    />
+  </Switch>
+</div>
+`;

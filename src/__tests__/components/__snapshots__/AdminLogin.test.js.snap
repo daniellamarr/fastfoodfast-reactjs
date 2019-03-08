@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login Component should match snapshot 1`] = `
+<AdminLogin
+  adminLogin={[Function]}
+  auth={
+    Object {
+      "loadingStatus": false,
+    }
+  }
+>
+  <div
+    id="loginPage"
+  >
+    <section
+      id="login"
+    >
+      <center>
+        <div
+          className="login"
+        >
+          <h4>
+            This authentication page is reserved only for Admin
+          </h4>
+          <form
+            id="adminLoginForm"
+            method="post"
+            onSubmit={[Function]}
+          >
+            <input
+              id="email"
+              name="email"
+              onChange={[Function]}
+              placeholder="Email"
+              required={true}
+              type="email"
+            />
+            <input
+              id="password"
+              name="password"
+              onChange={[Function]}
+              placeholder="Password"
+              required={true}
+              type="password"
+            />
+            <button
+              type="submit"
+            >
+              Sign in 
+            </button>
+          </form>
+        </div>
+      </center>
+    </section>
+    <div
+      className="error hide"
+    />
+  </div>
+</AdminLogin>
+`;

@@ -7,7 +7,7 @@ exports[`Loader Component should match snapshot 1`] = `
   <center>
     <img
       alt="loading..."
-      src="images/loader.gif"
+      src="/images/loader.gif"
       width="80px"
     />
   </center>
