@@ -2,17 +2,24 @@ import 'babel-polyfill';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import moxios from 'moxios';
-import { userLogin, userSignup, userData } from '../../actions/authActions';
+import {
+  userLogin,
+  userSignup,
+  userData,
+  adminLogin,
+} from '../../actions/authActions';
 import {
   SET_CURRENT_USER,
   SET_REQUEST, SIGNUP,
   SET_USER_ERROR,
+  SET_ADMIN,
 } from '../../actions/types';
 import {
   loginMock,
   signupMock,
   errorSignupMock,
   errorLoginMock,
+  adminMock,
 } from '../__mocks__/responseMock';
 import { path } from '../../actions/Helpers';
 import {
@@ -20,6 +27,7 @@ import {
   signupData,
   badSignupData,
   badLoginData,
+  adminData,
 } from '../__mocks__/requestMock';
 
 const middlewares = [thunk];
@@ -121,6 +129,44 @@ describe('Auth Actions Test', () => {
       },
     ];
     await store.dispatch(userData());
+    expect(store.getActions()).toEqual(expectedActions);
+  });
+
+  test('An admin should log in to the app', async () => {
+    moxios.stubRequest(`${path}/auth/admin`, {
+      status: 200,
+      response: adminMock,
+    });
+    const expectedActions = [
+      {
+        type: SET_REQUEST,
+      },
+      {
+        type: SET_ADMIN,
+        payload: adminMock,
+      },
+    ];
+
+    await store.dispatch(adminLogin(adminData));
+    expect(store.getActions()).toEqual(expectedActions);
+  });
+
+  test('Error occur admin login when incomplete data is passed', async () => {
+    moxios.stubRequest(`${path}/auth/login`, {
+      status: 400,
+      response: errorLoginMock,
+    });
+    const expectedActions = [
+      {
+        type: SET_REQUEST,
+      },
+      {
+        type: SET_USER_ERROR,
+        payload: errorLoginMock.message,
+      },
+    ];
+
+    await store.dispatch(userLogin(badLoginData));
     expect(store.getActions()).toEqual(expectedActions);
   });
 });
