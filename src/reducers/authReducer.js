@@ -1,5 +1,9 @@
 import {
-  SIGNUP, SET_REQUEST, SET_USER_ERROR, SET_CURRENT_USER,
+  SIGNUP,
+  SET_REQUEST,
+  SET_USER_ERROR,
+  SET_CURRENT_USER,
+  SET_ADMIN,
 } from '../actions/types';
 
 const initialState = {
@@ -33,6 +37,11 @@ export default function (state = initialState, action) {
       return {
         ...state,
         user: action.payload,
+      };
+    case SET_ADMIN:
+      return {
+        ...state,
+        admin: action.payload,
       };
     default:
       return state;

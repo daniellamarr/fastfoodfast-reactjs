@@ -5,6 +5,7 @@ import {
   SET_REQUEST,
   SET_USER_ERROR,
   SET_CURRENT_USER,
+  SET_ADMIN,
 } from './types';
 
 export const setSignup = response => ({
@@ -24,6 +25,11 @@ export const setUserError = error => ({
 export const setCurrentUser = user => ({
   type: SET_CURRENT_USER,
   payload: user,
+});
+
+export const setAdmin = token => ({
+  type: SET_ADMIN,
+  payload: token,
 });
 
 export const userSignup = body => async (dispatch) => {
@@ -87,4 +93,28 @@ export const userData = () => async (dispatch) => {
 export const logOut = () => {
   localStorage.removeItem('userDetails');
   return setTimeout(() => { window.location.href = '/login'; }, 500);
+};
+
+export const adminLogin = body => async (dispatch) => {
+  dispatch(setUserRequest());
+  try {
+    const res = await Helpers.axiosPost(
+      '/auth/admin',
+      body,
+    );
+
+    Helpers.statusHandler(
+      res.data.message,
+      res.status,
+    );
+    const { token } = res.data;
+    dispatch(setAdmin({ token }));
+    localStorage.setItem('adminToken', JSON.stringify({ token }));
+    window.location.href = '/admin';
+  } catch (err) {
+    const errorMessage = err.response.data.message;
+    const statusCode = err.response.status;
+    Helpers.statusHandler(errorMessage, statusCode);
+    dispatch(setUserError(errorMessage));
+  }
 };
