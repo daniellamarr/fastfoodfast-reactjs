@@ -8,12 +8,12 @@ Heroku link to FastFoodFast frontend
 
 ## Routes
 
-- Home: '/'
-- Login: '/login'
-- Signup: '/signup'
-- Profile: '/profile'
-- Checkout: '/checkout'
-- Menu: '/menu/:id'
+- Home: `/`
+- Login: `/login`
+- Signup: `/signup`
+- Profile: `/profile`
+- Checkout: `/checkout`
+- Menu: `/menu/:id`
 
 ## Prerequisites
 
