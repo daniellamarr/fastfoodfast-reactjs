@@ -1,6 +1,18 @@
-export const onToggle = (clickID, eventID) => {
-  document.getElementById(clickID).onclick = () => {
-    document.getElementById(eventID).classList.toggle('hide');
+export const onToggle = () => {
+  document.getElementById('toggle').onclick = () => {
+    document.getElementById('dropdown').classList.toggle('hide');
+  };
+};
+
+export const onClickAway = () => {
+  window.onclick = (event) => {
+    const ev = event.target;
+    const shoppingCartB = document.getElementById('shoppingcart-b');
+    const shoppingCartA = document.getElementById('ti-shopping-cart');
+    const shoppingCart = document.getElementById('shoppingcart');
+    if (ev !== shoppingCartB && ev !== shoppingCartA) {
+      shoppingCart.classList.add('hide');
+    }
   };
 };
 

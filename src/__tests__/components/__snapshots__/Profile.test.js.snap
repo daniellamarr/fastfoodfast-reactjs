@@ -53,7 +53,7 @@ exports[`Profile Component should match snapshot 1`] = `
             <center>
               <img
                 alt="loading..."
-                src="/images/loader.gif"
+                src="test-file-stub"
                 width="80px"
               />
             </center>

@@ -18,6 +18,8 @@ exports[`Profile Component should match snapshot 1`] = `
       Object {
         "cart": Array [
           Object {
+            "price": 100,
+            "quantity": 20,
             "title": "Hello Test",
           },
         ],
@@ -92,10 +94,14 @@ exports[`Profile Component should match snapshot 1`] = `
                 <td>
                   Hello Test
                 </td>
-                <td />
-                <td />
                 <td>
-                  NaN
+                  20
+                </td>
+                <td>
+                  100
+                </td>
+                <td>
+                  2000
                 </td>
                 <td>
                   <a
@@ -117,7 +123,7 @@ exports[`Profile Component should match snapshot 1`] = `
                   Total:
                 </td>
                 <td>
-                  NaN
+                  2000
                 </td>
               </tr>
             </tbody>

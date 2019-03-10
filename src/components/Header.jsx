@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { userData } from '../actions/authActions';
-import { onToggle, shoppingCart } from '../utils/utilityScript';
+import { onToggle, shoppingCart, onClickAway } from '../utils/utilityScript';
 import Cart from './Cart.jsx';
 import { getCartItems } from '../actions/cartActions';
+import onScroll from '../utils/onScroll';
 
 /**
  * Header
@@ -19,8 +20,10 @@ export class Header extends React.Component {
   componentDidMount() {
     this.props.userData();
     this.props.getCartItems();
-    onToggle('toggle', 'dropdown');
+    onToggle();
     shoppingCart();
+    onScroll();
+    onClickAway();
   }
 
   /**
@@ -32,7 +35,7 @@ export class Header extends React.Component {
       <div>
         <header id="home-header">
           <div className="logo">
-            <h1><a href="index.html">Fast-Food-Fast</a></h1>
+            <h1><a href="/">Fast-Food-Fast</a></h1>
           </div>
           <nav>
             {
@@ -44,7 +47,7 @@ export class Header extends React.Component {
                     id="shoppingcart-b"
                     className="shoppingcart-b"
                   >
-                    <i className="ti-shopping-cart"></i>
+                    <i id="ti-shopping-cart" className="ti-shopping-cart"></i>
                     <sup>
                       <span className="badge itemsincart">
                         {this.props.cart.noOfItems}
@@ -68,7 +71,7 @@ export class Header extends React.Component {
                     id="shoppingcart-b"
                     className="shoppingcart-b"
                   >
-                    <i className="ti-shopping-cart"></i>
+                    <i id="ti-shopping-cart" className="ti-shopping-cart"></i>
                     <sup>
                       <span className="badge itemsincart">
                         {this.props.cart.noOfItems}
@@ -102,7 +105,7 @@ export class Header extends React.Component {
                   id="shoppingcart-b"
                   className="shoppingcart-b"
                 >
-                  <i className="ti ti-shopping-cart"></i>
+                  <i id="ti-shopping-cart" className="ti ti-shopping-cart"></i>
                   <sup className="itemsincart">
                     {this.props.cart.noOfItems}
                   </sup>

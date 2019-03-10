@@ -21,6 +21,8 @@ const props = {
     cart: [
       {
         title: 'Hello Test',
+        price: 100,
+        quantity: 20,
       },
     ],
     noOfItems: 1,
@@ -52,5 +54,10 @@ describe('Profile Component', () => {
 
   it('click place order button', () => {
     wrapper.find('#ordernow').simulate('click');
+  });
+
+  it('should simulate an empty cart', () => {
+    const props2 = { ...props, cart: { cart: [] } };
+    wrapper = mount(<Checkout {...props2} />);
   });
 });

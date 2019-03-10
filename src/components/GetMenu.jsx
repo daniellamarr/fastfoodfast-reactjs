@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import { getAllMenu } from '../actions/Menu';
 import { addToCart } from '../actions/cartActions';
 
+const loader = require('../../public/images/loader.gif');
+
 /**
  * GetMenu
  */
@@ -84,7 +86,7 @@ export class GetMenu extends React.Component {
         {this.props.menuStatus
           ? menuItems
           : <center>
-            <img src="/images/loader.gif" alt="loading..." width="100px" />
+            <img src={loader} alt="loading..." width="100px" />
           </center>
         }
         <div className="clear"></div>

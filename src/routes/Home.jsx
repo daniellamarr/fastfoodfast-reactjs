@@ -14,8 +14,17 @@ export default class Home extends React.Component {
         <section id="home">
           <div className="title">
             <h1>Quench The Hunger</h1>
-            <h4>Your One Stop Restaurant</h4>
+            <h4>
+              We are your one stop restaurant offering
+              best meals at affordable prices
+            </h4>
+            <a href="/signup">
+              <button>Get Started</button>
+            </a>
           </div>
+        </section>
+        <section>
+          
         </section>
         <section id="foods">
           <div className="title">

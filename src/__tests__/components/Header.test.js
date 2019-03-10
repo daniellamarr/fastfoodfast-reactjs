@@ -6,9 +6,21 @@ import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
-import { mount, shallow } from 'enzyme';
-import sinon from 'sinon';
+import { shallow } from 'enzyme';
 import { Header } from '../../components/Header.jsx';
+
+const initialState = {
+  cart: {
+    cart: [
+      {
+        id: 1,
+        image: 'some url',
+        title: 'test title',
+      },
+    ],
+    noOfItems: 0,
+  },
+};
 
 let wrapper;
 
@@ -19,6 +31,13 @@ const props = {
     user: {},
   },
   cart: {
+    cart: [
+      {
+        id: 1,
+        image: 'some url',
+        title: 'test title',
+      },
+    ],
     noOfItems: 0,
   },
 };
@@ -26,7 +45,7 @@ const props = {
 const middlewares = [thunk];
 
 const mockStore = configureMockStore(middlewares);
-const store = mockStore();
+const store = mockStore(initialState);
 
 beforeEach(() => {
   wrapper = shallow(

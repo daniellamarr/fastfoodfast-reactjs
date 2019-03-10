@@ -36,6 +36,9 @@ export const placeOrder = () => async (dispatch) => {
   try {
     dispatch(setOrderRequest());
     const userDetails = localStorage.getItem('userDetails');
+    if (userDetails === null) {
+      window.location.href = '/login';
+    }
     const { token } = JSON.parse(userDetails);
     const items = [];
     const getItems = JSON.parse(localStorage.getItem('items'));
