@@ -6,6 +6,15 @@
 Heroku link to FastFoodFast frontend
 [Click Here](https://fastfoodfast-reactjs.herokuapp.com)
 
+## Routes
+
+- Home: '/'
+- Login: '/login'
+- Signup: '/signup'
+- Profile: '/profile'
+- Checkout: '/checkout'
+- Menu: '/menu/:id'
+
 ## Prerequisites
 
 The following tools will be needed to run this application successfully:
@@ -26,7 +35,7 @@ Run `npm test` in the terminal for the cloned folder.
 - Run `npm run build` to build the app
 - Run `npm start` to start the app
 - App runs on port 8000
-- Access endpoints on **localhost:8000**
+- Access application locally on **localhost:8000**
 
 ### On Heroku
 
