@@ -1,18 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SingleMenu Component should match snapshot 1`] = `
-<ContextProvider
-  value={
+<Provider
+  store={
     Object {
-      "store": Object {
-        "clearActions": [Function],
-        "dispatch": [Function],
-        "getActions": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
-      },
-      "storeState": Object {},
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
     }
   }
 >
@@ -26,13 +23,109 @@ exports[`SingleMenu Component should match snapshot 1`] = `
         },
       }
     }
-    menu={Object {}}
-    menuStatus={false}
-    menus={
-      Array [
-        Object {},
-      ]
+    menu={
+      Object {
+        "id": 1,
+        "image": "image url",
+        "price": "1000",
+        "quantity": "30",
+        "title": "test menu",
+      }
     }
-  />
-</ContextProvider>
+    menuStatus={true}
+    menus={
+      Object {
+        "menus": Array [
+          Object {},
+        ],
+      }
+    }
+  >
+    <div>
+      <section
+        id="menudetails"
+        style={
+          Object {
+            "backgroundImage": "url(undefined)",
+          }
+        }
+      >
+        <div
+          className="title"
+        >
+          <h1>
+            test menu
+          </h1>
+          <h2>
+            N
+            1000
+          </h2>
+          <p>
+            30
+             item(s) remaining in stock
+          </p>
+          <input
+            className="quantityField"
+            defaultValue="1"
+            id="qty1"
+            max={10}
+            min={1}
+            name="quantity"
+            onChange={[Function]}
+            type="number"
+          />
+          <button
+            id="addtocart"
+            onClick={[Function]}
+          >
+            Add to cart
+          </button>
+        </div>
+      </section>
+      <section
+        id="foods"
+      >
+        <div
+          className="title"
+        >
+          <h2>
+            More varieties
+          </h2>
+          <hr
+            className="div"
+          />
+        </div>
+        <Connect(GetMenu)>
+          <GetMenu
+            addToCart={[Function]}
+            getAllMenu={[Function]}
+            menuItems={
+              Array [
+                Object {
+                  "id": 1,
+                  "price": "1000",
+                  "title": "test",
+                },
+              ]
+            }
+            menuStatus={false}
+          >
+            <div>
+              <center>
+                <img
+                  alt="loading..."
+                  src="test-file-stub"
+                  width="100px"
+                />
+              </center>
+              <div
+                className="clear"
+              />
+            </div>
+          </GetMenu>
+        </Connect(GetMenu)>
+      </section>
+    </div>
+  </SingleMenu>
+</Provider>
 `;

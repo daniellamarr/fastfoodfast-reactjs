@@ -152,7 +152,7 @@ describe('Auth Actions Test', () => {
   });
 
   test('Error occur admin login when incomplete data is passed', async () => {
-    moxios.stubRequest(`${path}/auth/login`, {
+    moxios.stubRequest(`${path}/auth/admin`, {
       status: 400,
       response: errorLoginMock,
     });
@@ -166,7 +166,7 @@ describe('Auth Actions Test', () => {
       },
     ];
 
-    await store.dispatch(userLogin(badLoginData));
+    await store.dispatch(adminLogin(badLoginData));
     expect(store.getActions()).toEqual(expectedActions);
   });
 });

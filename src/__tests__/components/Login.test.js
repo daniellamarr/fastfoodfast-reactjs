@@ -21,12 +21,12 @@ describe('Login Component', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should find onChange()', () => {
+  it('should simulate email text field change', () => {
     wrapper.find('#email').simulate('change');
     expect(wrapper.state().email).toEqual('');
   });
 
-  it('should find onSubmit()', () => {
+  it('should simulate form submission', () => {
     wrapper.find('#loginForm').simulate('submit', {
       preventDefault: () => {},
     });

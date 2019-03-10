@@ -12,7 +12,18 @@ exports[`Header Component should match snapshot 1`] = `
         "replaceReducer": [Function],
         "subscribe": [Function],
       },
-      "storeState": Object {},
+      "storeState": Object {
+        "cart": Object {
+          "cart": Array [
+            Object {
+              "id": 1,
+              "image": "some url",
+              "title": "test title",
+            },
+          ],
+          "noOfItems": 0,
+        },
+      },
     }
   }
 >
@@ -25,6 +36,13 @@ exports[`Header Component should match snapshot 1`] = `
       }
       cart={
         Object {
+          "cart": Array [
+            Object {
+              "id": 1,
+              "image": "some url",
+              "title": "test title",
+            },
+          ],
           "noOfItems": 0,
         }
       }

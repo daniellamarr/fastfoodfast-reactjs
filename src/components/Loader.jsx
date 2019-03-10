@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+const loader = require('../../public/images/loader.gif');
+
 /**
  * Loader
  */
@@ -11,7 +13,7 @@ export default class Loader extends Component {
     return (
       <div id="loader">
         <center>
-          <img src="/images/loader.gif" alt="loading..." width="80px" />
+          <img src={loader} alt="loading..." width="80px" />
         </center>
       </div>
     );
